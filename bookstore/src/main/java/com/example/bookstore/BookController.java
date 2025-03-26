@@ -29,7 +29,7 @@ public class BookController {
 
     // Retrieve a specific book by its ID
     // Endpoint: GET http://localhost:8080/books/{id}
-    @GetMapping("/{id}")
+    @GetMapping("/{id}") //made changes to get book by id
     public ResponseEntity<Book> getBookById(@PathVariable Long id) {
         Book book = bookService.getBookById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Book not found with id: " + id));
